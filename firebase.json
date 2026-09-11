@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22",
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR/..\" run functions:prepare"
+    ],
+    "ignore": ["node_modules", ".git", "src", "*.local"]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "**/*.@(js|json|css|html)",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
+    ]
+  }
+}

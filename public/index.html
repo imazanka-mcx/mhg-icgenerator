@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MHG Inn Codes</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1C2D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ABeeZee&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground: #F2F5F7; --surface: #FFFFFF; --surface-2: #E8EEF2;
+    --ink: #10202A; --ink-2: #4A5C67; --ink-3: #7C8D98;
+    --line: #D3DEE5; --line-soft: #E4EBEF;
+    --accent: #0073AC; --accent-deep: #005580;
+    --good: #1F7A5C; --good-wash: #E1F1EA;
+    --warn: #9A6408; --warn-wash: #F8EEDA;
+    --bad: #A83232; --bad-wash: #F8E6E4;
+    --plate: #10202A; --plate-ink: #F2F5F7; --plate-line: #2C4250;
+    --shadow: 0 1px 2px rgba(16,32,42,.06), 0 8px 24px -12px rgba(16,32,42,.18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0B141A; --surface: #12202A; --surface-2: #1A2C37;
+      --ink: #E6EFF4; --ink-2: #A3B5C0; --ink-3: #71858F;
+      --line: #24373F; --line-soft: #1B2C35;
+      --accent: #45AADE; --accent-deep: #7CC8EC;
+      --good: #4FB68C; --good-wash: #102C24;
+      --warn: #D9A441; --warn-wash: #2E2413;
+      --bad: #E58B8B; --bad-wash: #331A1A;
+      --plate: #071219; --plate-ink: #E6EFF4; --plate-line: #24404F;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  .bar {
+    max-width: 1060px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; gap: 16px; justify-content: space-between; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 11px; }
+  .mark { width: 30px; height: 30px; border-radius: 6px; display: block; }
+  h1 { font-family: "ABeeZee", sans-serif; font-weight: 400; font-size: 1.5rem; margin: 0; letter-spacing: -.015em; }
+  .tag {
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  .who { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--ink-2); }
+  main { max-width: 1060px; margin: 0 auto; padding: 28px 24px 80px; }
+  section { margin-bottom: 36px; }
+  h2 { font-family: "ABeeZee", sans-serif; font-weight: 400; font-size: 1.2rem; margin: 0 0 14px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; box-shadow: var(--shadow); }
+  .gen { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,360px); }
+  @media (max-width: 860px) { .gen { grid-template-columns: 1fr; } }
+  .form { padding: 20px; display: grid; gap: 14px; align-content: start; }
+  .out { padding: 20px; border-left: 1px solid var(--line); background: var(--surface-2); display: flex; flex-direction: column; gap: 14px; }
+  @media (max-width: 860px) { .out { border-left: none; border-top: 1px solid var(--line); } }
+  .field { display: grid; gap: 5px; }
+  label, .lbl {
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  input, select {
+    font-family: inherit; font-size: 15px; color: var(--ink); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 2px; padding: 9px 10px; width: 100%;
+  }
+  input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .row { display: grid; grid-template-columns: 1fr 100px; gap: 10px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hint { font-size: 11.5px; color: var(--ink-3); line-height: 1.4; }
+  button {
+    font-family: inherit; font-size: 15px; font-weight: 600; background: var(--accent);
+    color: #fff; border: 1px solid var(--accent); border-radius: 2px; padding: 9px 15px; cursor: pointer;
+  }
+  button:hover:not([disabled]) { background: var(--accent-deep); border-color: var(--accent-deep); }
+  button[disabled] { opacity: .45; cursor: not-allowed; }
+  button.ghost { background: transparent; color: var(--ink-2); border-color: var(--line); }
+  button.ghost:hover:not([disabled]) { background: var(--surface); color: var(--ink); }
+  .code {
+    font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: clamp(1.4rem, 5vw, 2rem);
+    letter-spacing: .14em; color: var(--plate-ink); background: var(--plate); border-radius: 3px;
+    padding: 15px 12px; text-align: center; border: 1px solid var(--plate-line);
+    white-space: nowrap; overflow-x: auto;
+  }
+  .trace { border-top: 1px solid var(--line); }
+  .trow {
+    display: grid; grid-template-columns: 44px 1fr; gap: 10px; padding: 8px 0;
+    border-bottom: 1px solid var(--line-soft); font-size: 12.5px; align-items: start;
+  }
+  .trow .rid { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; font-weight: 600; color: var(--accent); padding-top: 2px; }
+  .trow .txt { color: var(--ink-2); line-height: 1.4; }
+  .trow .txt b { color: var(--ink); font-weight: 600; }
+  .flag { font-size: 12.5px; line-height: 1.45; padding: 9px 11px; border-radius: 2px; border-left: 3px solid; }
+  .flag.ok { background: var(--good-wash); border-color: var(--good); color: var(--good); }
+  .flag.warn { background: var(--warn-wash); border-color: var(--warn); color: var(--warn); }
+  .flag.bad { background: var(--bad-wash); border-color: var(--bad); color: var(--bad); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th {
+    text-align: left; font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 10.5px;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3);
+    padding: 11px 13px; border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  td { padding: 10px 13px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.mono { font-family: "IBM Plex Mono", monospace; font-weight: 500; letter-spacing: .05em; white-space: nowrap; }
+  tr.retired td.mono:first-child { text-decoration: line-through; color: var(--ink-3); }
+  .pill {
+    display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 10px;
+    letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; border: 1px solid;
+  }
+  .pill.active { color: var(--good); border-color: var(--good); background: var(--good-wash); }
+  .pill.pipeline { color: var(--warn); border-color: var(--warn); background: var(--warn-wash); }
+  .pill.retired { color: var(--ink-3); border-color: var(--line); background: var(--surface-2); }
+  .empty { padding: 20px 13px; color: var(--ink-3); font-size: 13px; }
+  .gate { max-width: 460px; margin: 80px auto; text-align: center; }
+  .gate p { color: var(--ink-2); margin: 12px 0 22px; }
+  [hidden] { display: none !important; }
+  footer { margin-top: 40px; font-size: 11.5px; color: var(--ink-3); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="brand">
+      <img class="mark" src="/icon-192.png" alt="" width="30" height="30">
+      <h1>MHG Inn Codes</h1>
+      <span class="tag">MHG-IC v1.0 · Corporate</span>
+    </div>
+    <div class="who" id="who" hidden>
+      <span id="whoEmail"></span>
+      <button class="ghost" id="signOut">Sign out</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="gate" id="gate">
+    <h2 id="gateTitle">Sign in</h2>
+    <p id="gateMsg">MHG corporate access only.</p>
+    <button id="signIn">Sign in with Google</button>
+    <button id="enable" hidden>Enable my access</button>
+    <p class="hint" id="enableNote" style="margin-top:14px"></p>
+  </div>
+
+  <div id="app" hidden>
+    <section>
+      <h2>Issue a code</h2>
+      <div class="panel gen">
+        <div class="form">
+          <div class="field">
+            <label for="name">Property name</label>
+            <input id="name" type="text" placeholder="Hilton Garden Inn Evansville" autocomplete="off">
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="city">City / market</label>
+              <input id="city" type="text" placeholder="Evansville" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="state">State</label>
+              <select id="state"></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="brand">Flag</label>
+            <select id="brand"></select>
+          </div>
+          <div class="field">
+            <label for="submarket">Submarket</label>
+            <input id="submarket" type="text" placeholder="East · West · Downtown · Airport" autocomplete="off">
+            <span class="hint">Recorded either way. It only enters the code when a market has to split (M5).</span>
+          </div>
+          <div class="field">
+            <label for="franchisor">Prior franchisor code</label>
+            <input id="franchisor" type="text" placeholder="e.g. EVVIN" autocomplete="off" style="text-transform:uppercase">
+            <span class="hint">Only if this property converted from a flag. Cross-reference, never an identifier here.</span>
+          </div>
+          <div class="row3">
+            <div class="field">
+              <label for="override">Market override</label>
+              <input id="override" type="text" maxlength="3" placeholder="3 letters" autocomplete="off" style="text-transform:uppercase">
+            </div>
+            <div class="field">
+              <label for="status">Status</label>
+              <select id="status">
+                <option value="active">Active — open</option>
+                <option value="pipeline">Pipeline — contracted</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="out">
+          <div>
+            <span class="lbl">Candidate code</span>
+            <div class="code" id="candidate" style="margin-top:5px">— — — — —</div>
+          </div>
+          <div id="verdict"></div>
+          <div>
+            <span class="lbl">Derivation</span>
+            <div class="trace" id="trace" style="margin-top:5px"></div>
+          </div>
+          <div style="display:flex; gap:9px; flex-wrap:wrap">
+            <button id="issue" disabled>Issue code</button>
+            <button class="ghost" id="clear">Clear</button>
+          </div>
+          <p class="hint" id="note" style="margin:0"></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Registry</h2>
+      <div class="panel">
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Inn code</th><th>Property</th><th>Flag</th><th>Market</th>
+                <th>Submarket</th><th>Was</th><th>Status</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="registry"></tbody>
+          </table>
+        </div>
+        <div style="padding:11px 13px; border-top:1px solid var(--line); font-size:11.5px; color:var(--ink-3)" id="count">—</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Access</h2>
+      <div class="panel" style="padding:18px">
+        <div style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap">
+          <div class="field" style="flex:1 1 280px">
+            <label for="grantEmail">Grant inn code access</label>
+            <input id="grantEmail" type="email" placeholder="name@mazcoenterprises.com" autocomplete="off">
+          </div>
+          <button id="grant">Grant</button>
+          <button class="ghost" id="revoke">Revoke</button>
+        </div>
+        <p class="hint" id="grantNote" style="margin:10px 0 0">
+          They need to sign in once before you can grant them access, and to reload afterwards.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      MHG-branded hotels only — a property MHG manages under another flag gets no code here.
+      The PROP code is the inn code. Codes are permanent: a retired code is never reissued (G3),
+      and a rebrand issues a new code rather than editing one (G2).
+    </footer>
+  </div>
+</main>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>

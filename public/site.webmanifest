@@ -1,0 +1,13 @@
+{
+  "name": "MHG Inn Codes",
+  "short_name": "Inn Codes",
+  "description": "Issue and manage MHG inn codes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1C2D",
+  "theme_color": "#0B1C2D",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

@@ -1,0 +1,46 @@
+rules_version = '2';
+
+// Inn code registry — MHG-IC v1.0
+//
+// Every collection here is READ-ONLY to clients. Issuance runs in the
+// issueInnCode Cloud Function through the Admin SDK, which bypasses these
+// rules. That is deliberate: the uniqueness guarantee is a transactional
+// create on a document ID (G8), and a client that could write innCodes
+// directly could break it.
+//
+// Merge these blocks into the OpsCore firestore.rules rather than replacing
+// the file, and keep whatever staff-authentication helper the project
+// already uses in place of isStaff() below.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isStaff() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+
+    // The property records. Internal id is the document id, never the code (G1).
+    match /properties/{propertyId} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+
+    // Uniqueness ledger. One document per code ever issued, never deleted (G3).
+    match /innCodes/{code} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+
+    // Market and submarket claims. Permanent (M7).
+    match /marketCodes/{marketCode} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+
+    // Reverse lookup for the M6 submarket rule.
+    match /submarketIndex/{key} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+  }
+}

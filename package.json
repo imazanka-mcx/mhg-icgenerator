@@ -1,0 +1,40 @@
+{
+  "name": "@mcx/inn-code",
+  "version": "1.0.0",
+  "description": "MHG Inn Code Standard (MHG-IC v1.0) — derives and issues five-character property codes against a registry of record.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./firestore": {
+      "types": "./dist/registry/firestore.d.ts",
+      "default": "./dist/registry/firestore.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/gen-brands.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "demo": "npm run build && node demo.mjs",
+    "functions:prepare": "npm run build && npm --prefix functions install --no-audit --no-fund && npm --prefix functions run build",
+    "deploy": "firebase deploy --only functions,firestore,hosting"
+  },
+  "peerDependencies": {
+    "firebase-admin": ">=12"
+  },
+  "peerDependenciesMeta": {
+    "firebase-admin": { "optional": true }
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

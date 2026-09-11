@@ -1,0 +1,10 @@
+node_modules/
+dist/
+functions/node_modules/
+functions/lib/
+functions/vendor/
+.firebase/
+*.log
+.DS_Store
+serviceAccount.json
+*.serviceAccount.json
