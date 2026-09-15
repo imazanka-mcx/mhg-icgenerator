@@ -1,21 +1,21 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-09-05",
+  "generatedAt": "2026-09-15",
   "chains": {
-    "MHG": "Maz Hotel Group"
+    "MAZ": "Maz Hotel Group"
   },
   "brands": [
     {
       "code": "BC",
       "name": "BYX Collection",
-      "chainCode": "MHG",
+      "chainCode": "MAZ",
       "wasCode": "",
       "retired": false
     },
     {
       "code": "LX",
       "name": "BYX Luxury",
-      "chainCode": "MHG",
+      "chainCode": "MAZ",
       "wasCode": "",
       "retired": false
     }

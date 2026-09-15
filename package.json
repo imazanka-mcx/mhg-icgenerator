@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "MHG Inn Code Standard (MHG-IC v1.0) — derives and issues five-character property codes against a registry of record.",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/imazanka-mcx/mhg-icgenerator.git"
+  },
   "private": true,
   "type": "module",
   "main": "./dist/index.js",
@@ -17,8 +21,11 @@
       "default": "./dist/registry/firestore.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepare": "npm run build",
     "build": "tsc -p tsconfig.json && node scripts/gen-brands.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -31,7 +38,9 @@
     "firebase-admin": ">=12"
   },
   "peerDependenciesMeta": {
-    "firebase-admin": { "optional": true }
+    "firebase-admin": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "typescript": "^5.6.0",
