@@ -1,6 +1,6 @@
 {
   "name": "@mcx/inn-code",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MHG Inn Code Standard (MHG-IC v1.0) — derives and issues five-character property codes against a registry of record.",
   "license": "UNLICENSED",
   "repository": {

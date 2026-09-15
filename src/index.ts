@@ -5,14 +5,15 @@
  *
  *   const deps = { config: MHG_CONFIG, registry: new MemoryRegistry() };
  *   const result = await issueCode(deps, {
- *     name: 'Hampton Inn Evansville East',
- *     city: 'Evansville', state: 'IN', brandCode: 'HX',
+ *     name: 'BYX Collection Evansville East',
+ *     city: 'Evansville', state: 'IN', brandCode: 'BC',
  *     submarket: 'East', franchisorCode: 'EVVIN',
  *   });
- *   result.ok && result.record.code; // 'EVVHX'
+ *   result.ok && result.record.code; // 'EVVBC'
  *
- * In OpsCore, swap MemoryRegistry for FirestoreRegistry from
- * '@mcx/inn-code/firestore' and run issuance server-side.
+ * Swap MemoryRegistry for a real one — FirestoreRegistry from
+ * '@mcx/inn-code/firestore', or the Corporate Console's PrismaRegistry — and
+ * run issuance server-side.
  */
 
 export * from './types.js';
@@ -36,3 +37,9 @@ export {
   type EngineDeps,
 } from './engine.js';
 export { normalizePlace, lettersOnly, marketKey, submarketKey } from './rules/text.js';
+
+// Part of the Registry contract, not internals: an adapter has to decide
+// whether an incoming claim reassigns someone else's market code (M7) and
+// whether a claim owns its submarket (M6). Every implementation needs these,
+// so they belong to the port.
+export { conflicts, ownsSubmarket, bindsSubmarket, claimIdentity } from './rules/claim.js';
